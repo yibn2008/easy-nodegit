@@ -1,6 +1,6 @@
 {
   "name": "easy-nodegit",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a high level wrapper for nodegit with simple and elegant API",
   "main": "lib/index.js",
   "scripts": {
