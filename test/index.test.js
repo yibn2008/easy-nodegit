@@ -26,6 +26,22 @@ describe('test git client', function () {
 
   it('should add/remove/commit/reset files', async function () {
     await client.init()
+    // write .git/config
+    fs.writeFileSync(path.join(client.dir, '.git', 'config'), `
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+        precomposeunicode = true
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+[user]
+        name = xxx
+        email = xxx@yyy.com
+`)
 
     // prepare
     const file1 = path.join(basedir, 'index.js')

@@ -10,9 +10,13 @@
     "test-cov": "nyc npm run test-local",
     "doc": "jsdoc2md lib/index.js > API.md",
     "ci": "npm run lint && npm run test-cov",
-    "beta": "npm test && git release $npm_package_version && npm publish --tag beta",
-    "release": "npm test && npm-ensure -t changelog && git release $npm_package_version && npm publish",
-    "precommit": "standard && npm-ensure -t deps"
+    "precommit": "npm run doc && lint-staged"
+  },
+  "lint-staged": {
+    ".js": [
+      "npm run lint",
+      "git add"
+    ]
   },
   "ensure": {
     "deps": {
@@ -41,11 +45,15 @@
     ]
   },
   "dependencies": {
-    "nodegit": "0.21.0"
+    "extend": "^3.0.2",
+    "git-config-path": "^1.0.1",
+    "nodegit": "0.21.0",
+    "parse-git-config": "^2.0.2"
   },
   "devDependencies": {
     "husky": "0.x",
     "jsdoc-to-markdown": "^4.0.1",
+    "lint-staged": "^7.2.0",
     "mocha": "^3.0.2",
     "npm-ensure": "^1.0.0",
     "nyc": "11.x",
