@@ -13,7 +13,7 @@
     "precommit": "npm run doc && lint-staged"
   },
   "lint-staged": {
-    ".js": [
+    "*.js": [
       "npm run lint",
       "git add"
     ]
