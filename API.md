@@ -1,7 +1,7 @@
 <a name="GitClient"></a>
 
 ## GitClient
-Git Client to operate repo
+Git Client Class
 
 **Kind**: global class  
 **Access**: public  
@@ -12,11 +12,12 @@ Git Client to operate repo
     * [.clone(url, branchName)](#GitClient+clone)
     * [.pull()](#GitClient+pull)
     * [.fetch(remoteName)](#GitClient+fetch)
-    * [.push(remoteName)](#GitClient+push)
+    * [.fetchAll()](#GitClient+fetchAll)
+    * [.push()](#GitClient+push)
     * [.add(pathspec)](#GitClient+add)
     * [.reset(pathspec)](#GitClient+reset)
     * [.remove(pathspec)](#GitClient+remove)
-    * [.commit(message)](#GitClient+commit)
+    * [.commit(message, options)](#GitClient+commit)
     * [.getStatus(untracted)](#GitClient+getStatus) ⇒ <code>Array</code>
     * [.getBranches()](#GitClient+getBranches) ⇒ <code>Array</code>
 
@@ -66,17 +67,18 @@ fetch commits
 | --- | --- |
 | remoteName | <code>String</code> | 
 
+<a name="GitClient+fetchAll"></a>
+
+### gitClient.fetchAll()
+fetch commits from all remotes
+
+**Kind**: instance method of [<code>GitClient</code>](#GitClient)  
 <a name="GitClient+push"></a>
 
-### gitClient.push(remoteName)
+### gitClient.push()
 push commits to remote
 
 **Kind**: instance method of [<code>GitClient</code>](#GitClient)  
-
-| Param | Type |
-| --- | --- |
-| remoteName | <code>String</code> | 
-
 <a name="GitClient+add"></a>
 
 ### gitClient.add(pathspec)
@@ -112,7 +114,7 @@ remove files from index
 
 <a name="GitClient+commit"></a>
 
-### gitClient.commit(message)
+### gitClient.commit(message, options)
 commit a message
 
 **Kind**: instance method of [<code>GitClient</code>](#GitClient)  
@@ -120,6 +122,7 @@ commit a message
 | Param | Type |
 | --- | --- |
 | message | <code>String</code> | 
+| options | <code>Object</code> | 
 
 <a name="GitClient+getStatus"></a>
 
